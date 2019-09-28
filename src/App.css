@@ -25,3 +25,19 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.card-style {
+  text-align: left;
+  line-height: 20px;
+  max-width: 250px;
+  padding: 7px;
+  
+}
+
+.card-title-style {
+  font-weight: bold;
+}
+
+.card-style img {
+  height: 250px;
+}
