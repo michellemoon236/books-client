@@ -6,13 +6,13 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import BooksContainer from './containers/BooksContainer';
 import BookForm from './containers/BookForm';
-// import { getGenres } from './actions/genres';
+import { getGenres } from './actions/genres';
 
 class App extends Component {
 
-  // componentDidMount(){
-  //   this.props.getGenres()
-  // }
+  componentDidMount(){
+    this.props.getGenres()
+  }
 
   render() {
     return (
@@ -30,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+export default connect(null, { getGenres })(App);

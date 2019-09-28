@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { getBooks } from '../actions/books';
 import { deleteBook } from '../actions/books';
-import BookCard from '../components/BookCard'
-import GenresContainer from './GenresContainer'
+import BookCard from '../components/BookCard';
+import GenresContainer from './GenresContainer';
 
 class BooksContainer extends Component {
 
