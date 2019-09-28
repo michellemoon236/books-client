@@ -7,6 +7,7 @@ export default (state = {genres: []}, action ) => {
     }
   case 'FETCH_GENRES':
     return {
+      ...state,
       genres: action.payload, 
       loading: false
     }
