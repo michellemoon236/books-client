@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -7,10 +6,14 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import BooksContainer from './containers/BooksContainer';
 import BookForm from './containers/BookForm';
+// import { getGenres } from './actions/genres';
 
 class App extends Component {
 
-  
+  // componentDidMount(){
+  //   this.props.getGenres()
+  // }
+
   render() {
     return (
       <div className="App">

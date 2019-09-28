@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getBooks } from '../actions/books';
 import { deleteBook } from '../actions/books';
-import GenresContainer from './GenresContainer'
 import BookCard from '../components/BookCard'
+import GenresContainer from './GenresContainer'
 
 class BooksContainer extends Component {
 
@@ -42,7 +42,7 @@ class BooksContainer extends Component {
         {console.log("books", books)}
         {this.props.loading ? <h3>Loading...</h3> : books }
       </div>
-    )
+    );
   }
 }
 
