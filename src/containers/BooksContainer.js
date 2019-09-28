@@ -11,6 +11,14 @@ class BooksContainer extends Component {
     this.props.getBooks()
   }
 
+  handleOnClick = (event) => {
+    console.log("I have been clicked", event.target)
+    this.setState({
+      // genreFilter: parseInt(event.target.id)
+      genreFilter: event.target.id
+    })
+  }
+
   render() {
 
     const books = this.props.books.map(book => <BookCard key={book.id} book={book} delete={this.props.deleteBook} /> )
@@ -19,7 +27,7 @@ class BooksContainer extends Component {
       <div>
         <br/>
         <h1>Book List</h1>
-        <GenresContainer />
+        <GenresContainer handleClick={this.handleOnClick} />
         {console.log("books", books)}
         {this.props.loading ? <h3>Loading...</h3> : books }
       </div>

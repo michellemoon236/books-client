@@ -11,10 +11,11 @@ class GenresContainer extends Component {
 
   render() {
 
-    const genres = this.props.genres.map(genre => <GenreButton key={genre.id} genre={genre} /> )
+    const genres = this.props.genres.map(genre => <GenreButton key={genre.id} genre={genre} handleThisClick={this.props.handleClick} /> )
 
     return (
       <div>
+        <h3>Select genre to filter books</h3>
         {this.props.loading ? <h3>Loading...</h3> : genres }
       </div>
     )
