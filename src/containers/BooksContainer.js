@@ -11,7 +11,7 @@ class BooksContainer extends Component {
 
   render() {
 
-    const books = this.props.books.map(book => <button id={book.id}>{book.name}</button> )
+    const books = this.props.books.map(book => <p>{book.title}</p> )
 
     return (
       <div>
