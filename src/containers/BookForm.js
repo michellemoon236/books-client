@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { addBook } from '../actions/books';
 
 class BookForm extends Component {
   state = {
@@ -15,7 +16,20 @@ class BookForm extends Component {
       [event.target.id]: event.target.value
     })
   }
-  
+
+  handleOnSubmit = event => {
+    event.preventDefault()
+    const book = {...this.state}
+    this.props.addBook(book)
+    this.setState({
+      title: '',
+      author: '',
+      genre_id: '',
+      image: '',
+      loading: false
+    })
+  }
+
   render() {
     return (
       <div>
@@ -77,4 +91,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(BookForm)
+export default connect(mapStateToProps, { addBook })(BookForm)
