@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getBooks } from '../actions/books';
+import { deleteBook } from '../actions/books';
 import GenresContainer from './GenresContainer'
 import BookCard from '../components/BookCard'
 
@@ -12,7 +13,7 @@ class BooksContainer extends Component {
 
   render() {
 
-    const books = this.props.books.map(book => <BookCard key={book.id} book={book} /> )
+    const books = this.props.books.map(book => <BookCard key={book.id} book={book} delete={this.props.deleteBook} /> )
 
     return (
       <div>
@@ -32,4 +33,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {getBooks} )(BooksContainer)
+export default connect(mapStateToProps, { getBooks, deleteBook } )(BooksContainer)
