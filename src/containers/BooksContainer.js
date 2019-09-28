@@ -41,8 +41,10 @@ class BooksContainer extends Component {
         <br/>
         <h1>Book List</h1>
         <GenresContainer handleClick={this.handleOnClick} />
-        {console.log("books", books)}
-        {this.props.loading ? <h3>Loading...</h3> : books }
+        <div class="flex-container">
+          {console.log("books", books)}
+          {this.props.loading ? <h3>Loading...</h3> : books }
+        </div>
       </div>
     );
   }
