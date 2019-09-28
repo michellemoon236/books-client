@@ -1,3 +1,11 @@
+.wrapper {
+  background: #fff;
+  margin: 16px auto;
+  max-width: 870px;
+  padding: 3%;
+  width: 90%;
+}
+
 .App {
   text-align: center;
 }
