@@ -53,7 +53,8 @@ class BooksContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    books: state.bookReducer.books
+    books: state.bookReducer.books,
+    loading: state.bookReducer.loading
   }
 }
 

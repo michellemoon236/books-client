@@ -30,7 +30,8 @@ class GenresContainer extends Component {
 const mapStateToProps = (state) => {
   // console.log("GENRE CONTAINER I am state", state)
   return {
-    genres: state.genreReducer.genres
+    genres: state.genreReducer.genres,
+    loading: state.genreReducer.loading
   }
 }
 
