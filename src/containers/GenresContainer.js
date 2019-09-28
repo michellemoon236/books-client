@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getGenres } from '../actions/genres';
+import GenreButton from '../components/GenreButton'
 
 class GenresContainer extends Component {
 
@@ -10,7 +11,7 @@ class GenresContainer extends Component {
 
   render() {
 
-    const genres = this.props.genres.map(genre => <button id={genre.id}>{genre.name}</button> )
+    const genres = this.props.genres.map(genre => <GenreButton key={genre.id} genre={genre} /> )
 
     return (
       <div>
