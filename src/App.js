@@ -7,6 +7,7 @@ import Home from './components/Home';
 import BooksContainer from './containers/BooksContainer';
 import BookForm from './containers/BookForm';
 import { getGenres } from './actions/genres';
+import Footer from './components/Footer'
 
 class App extends Component {
 
@@ -24,7 +25,9 @@ class App extends Component {
               <Route exact path='/books' component={BooksContainer} />
               <Route exact path='/books/new' component={BookForm} />
             </Switch>
+          <Footer />
         </Router>
+        
       </div>
     );
   }
