@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class GenresContainer extends Component {
   render() {
@@ -10,4 +11,4 @@ class GenresContainer extends Component {
   }
 }
 
-export default GenresContainer 
+export default connect()(GenresContainer)
