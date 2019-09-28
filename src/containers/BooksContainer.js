@@ -7,6 +7,10 @@ import BookCard from '../components/BookCard'
 
 class BooksContainer extends Component {
 
+  state = {
+    genreFilter: "all"
+  }
+
   componentDidMount(){
     this.props.getBooks()
   }
@@ -14,7 +18,6 @@ class BooksContainer extends Component {
   handleOnClick = (event) => {
     console.log("I have been clicked", event.target)
     this.setState({
-      // genreFilter: parseInt(event.target.id)
       genreFilter: event.target.id
     })
   }
