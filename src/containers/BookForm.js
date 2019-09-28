@@ -20,7 +20,9 @@ class BookForm extends Component {
   handleOnSubmit = event => {
     event.preventDefault()
     const book = {...this.state}
-    this.props.addBook(book)
+    this.props.addBook(book).then( () =>
+    this.props.history.push('/books')
+)
     this.setState({
       title: '',
       author: '',
