@@ -27,7 +27,9 @@ class App extends Component {
               <Route exact path='/books/new' component={BookForm} />
             </Switch>
           </div>
-          <Footer />
+          <div className="footer">
+            <Footer />
+          </div>
         </Router>
       </div>
     );
