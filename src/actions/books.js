@@ -6,3 +6,17 @@ export const getBooks = () => {
     .then(books => dispatch({type:'FETCH_BOOKS', payload: books}))
   }
 }
+
+
+export const deleteBook = (id) => {
+  return (dispatch) => {
+    dispatch({type: 'DELETE_BOOK'}, id)
+    return fetch(`/books/${id}`, {
+      method:'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(dispatch({type:'BOOK_DELETED', id}))
+  }
+}
