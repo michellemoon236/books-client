@@ -24,6 +24,19 @@ export default (state = {books: []}, action ) => {
         books: state.books.filter(book => book.id !== action.id),
         loading: false
       }
+    case 'ADD_BOOK':
+      console.log("Book selected to add")
+      return {
+        ...state, 
+        loading: true
+      }
+    case 'BOOK_ADDED':
+      console.log("Book has been added")
+      return {
+        ...state,
+        books: [...state.books, action.payload],
+        loading: false
+      }
     default: 
       return state
   }
