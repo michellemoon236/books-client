@@ -10,7 +10,7 @@ class BookForm extends Component {
     image: '',
     loading: false
   }
-
+  
   handleOnChange = event => {
     this.setState({
       [event.target.id]: event.target.value

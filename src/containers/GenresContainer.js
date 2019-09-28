@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getGenres } from '../actions/genres';
+// import { getGenres } from '../actions/genres';
 import AllButton from '../components/AllButton'
 import GenreButton from '../components/GenreButton'
 
 class GenresContainer extends Component {
 
-  componentDidMount(){
-    if (this.props.genres.length === 0) {
-      this.props.getGenres()
-    }
-  }
+  // componentDidMount(){
+  //   if (this.props.genres.length === 0) {
+  //     this.props.getGenres()
+  //   }
+  // }
 
   render(){
 
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { getGenres })(GenresContainer)
+export default connect(mapStateToProps)(GenresContainer)

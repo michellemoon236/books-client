@@ -7,8 +7,19 @@ import Home from './components/Home';
 import BooksContainer from './containers/BooksContainer';
 import BookForm from './containers/BookForm';
 import Footer from './components/Footer'
+import { getBooks } from './actions/books';
+import { getGenres } from './actions/genres';
 
 class App extends Component {
+
+  componentDidMount(){
+    if (this.props.books.length === 0) {
+      this.props.getBooks()
+    }
+    if (this.props.genres.length === 0) {
+      this.props.getGenres()
+    }
+  }
 
   render() {
     return (
@@ -31,4 +42,11 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+const mapStateToProps = (state) => {
+  return {
+    books: state.bookReducer.books,
+    genres: state.genreReducer.genres
+  }
+}
+
+export default connect(mapStateToProps, { getBooks, getGenres })(App);

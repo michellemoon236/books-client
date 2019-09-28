@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getBooks } from '../actions/books';
+// import { getBooks } from '../actions/books';
 import { deleteBook } from '../actions/books';
 import BookCard from '../components/BookCard';
 import GenresContainer from './GenresContainer';
@@ -11,11 +11,11 @@ class BooksContainer extends Component {
     genreFilter: "all"
   }
 
-  componentDidMount(){
-    if (this.props.books.length === 0) {
-      this.props.getBooks()
-    }
-  }
+  // componentDidMount(){
+  //   if (this.props.books.length === 0) {
+  //     this.props.getBooks()
+  //   }
+  // }
 
   handleOnClick = (event) => {
     console.log("I have been clicked", event.target)
@@ -58,4 +58,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { getBooks, deleteBook } )(BooksContainer)
+export default connect(mapStateToProps, { deleteBook } )(BooksContainer)
