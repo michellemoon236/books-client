@@ -15,6 +15,8 @@ class BooksContainer extends Component {
 
     return (
       <div>
+        <br/>
+        <h1>Book List</h1>
         <GenresContainer />
         {console.log("books", books)}
         {this.props.loading ? <h3>Loading...</h3> : books }
