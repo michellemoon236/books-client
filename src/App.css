@@ -7,12 +7,10 @@
 }
 
 .App {
-  text-align: center;
+  text-align: left;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
-.App-logo {
-  height: 40vmin;
-}
 
 .App-header {
   background-color: #282c34;
@@ -53,4 +51,8 @@
 .footer {
   font-family: 'Cambria';
   font-size: 12px;
+}
+
+.home img {
+  height: 400px;
 }
