@@ -7,7 +7,6 @@ export const getBooks = () => {
   }
 }
 
-
 export const deleteBook = (id) => {
   return (dispatch) => {
     dispatch({type: 'DELETE_BOOK'}, id)
@@ -18,5 +17,20 @@ export const deleteBook = (id) => {
       }
     })
     .then(dispatch({type:'BOOK_DELETED', id}))
+  }
+}
+
+export const addBook = (book) => {
+  return (dispatch) => {
+    dispatch({type: 'ADD_BOOK'}, book)
+    return fetch('/books', {
+      method:'POST',
+      body: JSON.stringify(book),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(resp => resp.json())
+    .then(book => dispatch({type:'BOOK_ADDED', payload: book}))
   }
 }
