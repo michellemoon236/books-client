@@ -10,6 +10,12 @@ class BookForm extends Component {
     loading: false
   }
 
+  handleOnChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    })
+  }
+  
   render() {
     return (
       <div>
