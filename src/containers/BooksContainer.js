@@ -12,7 +12,9 @@ class BooksContainer extends Component {
   }
 
   componentDidMount(){
-    this.props.getBooks()
+    if (this.props.books.length === 0) {
+      this.props.getBooks()
+    }
   }
 
   handleOnClick = (event) => {
