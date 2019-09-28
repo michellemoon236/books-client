@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getBooks } from '../actions/books';
 import GenresContainer from './GenresContainer'
+import BookCard from '../components/BookCard'
 
 class BooksContainer extends Component {
 
@@ -11,7 +12,7 @@ class BooksContainer extends Component {
 
   render() {
 
-    const books = this.props.books.map(book => <p>{book.title}</p> )
+    const books = this.props.books.map(book => <BookCard key={book.id} book={book} /> )
 
     return (
       <div>
