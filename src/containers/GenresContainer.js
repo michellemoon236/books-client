@@ -14,7 +14,7 @@ class GenresContainer extends Component {
 
     return (
       <div>
-        { genres }
+        {this.props.loading ? <h3>Loading...</h3> : genres }
       </div>
     )
   }
