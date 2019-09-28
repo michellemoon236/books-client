@@ -22,9 +22,17 @@ class BooksContainer extends Component {
     })
   }
 
-  render() {
+  filteredBooks = (books) => {
+    if (this.state.genreFilter === "all") {
+      return books
+    } else {
+      return books.filter(book => this.state.genreFilter === book.genre_id.toString())
+    }
+  }
 
-    const books = this.props.books.map(book => <BookCard key={book.id} book={book} delete={this.props.deleteBook} /> )
+  render(){
+
+    const books = this.filteredBooks(this.props.books).map(book => <BookCard key={book.id} book={book} delete={this.props.deleteBook} /> )
 
     return (
       <div>
