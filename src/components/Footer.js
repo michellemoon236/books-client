@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div>
       <br />
-      <p>2019 Book Tally</p>
+      <p>2020 Book Tally</p>
     </div>
   )
 }
