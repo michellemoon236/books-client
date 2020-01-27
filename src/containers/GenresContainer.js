@@ -1,16 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import { getGenres } from '../actions/genres';
 import AllButton from '../components/AllButton'
 import GenreButton from '../components/GenreButton'
 
 class GenresContainer extends Component {
-
-  // componentDidMount(){
-  //   if (this.props.genres.length === 0) {
-  //     this.props.getGenres()
-  //   }
-  // }
 
   render(){
 
@@ -20,7 +13,6 @@ class GenresContainer extends Component {
       <div>
         <h3>Select genre to filter books</h3>
         <AllButton handleThisClick={this.props.handleClick} />
-        {/* { genres } */}
         {this.props.loading ? <h3>Loading...</h3> : genres }
       </div>
     )
@@ -28,7 +20,6 @@ class GenresContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log("GENRE CONTAINER I am state", state)
   return {
     genres: state.genreReducer.genres,
     loading: state.genreReducer.loading
