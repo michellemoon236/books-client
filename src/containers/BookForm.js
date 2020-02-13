@@ -17,12 +17,14 @@ class BookForm extends Component {
     })
   }
 
-  handleOnSubmit = event => {
+  handleOnSubmit = event => { // ACBD
     event.preventDefault()
     const book = {...this.state}
+    console.log('A');
     this.props.addBook(book).then( () =>
-    this.props.history.push('/books')
-)
+      this.props.history.push('/books')
+    )
+    console.log('B');
     this.setState({
       title: '',
       author: '',

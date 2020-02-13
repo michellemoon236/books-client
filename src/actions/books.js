@@ -21,6 +21,7 @@ export const deleteBook = (id) => {
 }
 
 export const addBook = (book) => {
+  console.log('C');
   return (dispatch) => {
     dispatch({type: 'ADD_BOOK'}, book)
     return fetch('/books', {
@@ -31,6 +32,9 @@ export const addBook = (book) => {
       }
     })
     .then(resp => resp.json())
-    .then(book => dispatch({type:'BOOK_ADDED', payload: book}))
+    .then(book => {
+      console.log('D');
+       dispatch({type:'BOOK_ADDED', payload: book})})
   }
+  // console.log('E');
 }

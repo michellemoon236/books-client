@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
+// import VoteButton from './VoteButton'
 
 
 const BookCard = props => {
@@ -13,6 +14,7 @@ const BookCard = props => {
             <p>Author: {props.book.author}</p>
             <p>Genre: {props.book.genre_name}</p>
             <button onClick={() => props.delete(props.book.id)}>Delete Book</button>
+            {/* <VoteButton /> */}
           </Card.Text>
         </Card.Body>
       </Card>
